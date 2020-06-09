@@ -15,12 +15,34 @@
       <a id="paris">Paris</a>
     </div>
 
-    <div style="margin-left: 5%">
+    <div style="margin-left: 5%;">
       <p>html에는 최대한 자바스크립트를 깔끔하게 넣는것이 좋다.</p>
       <ul>
         <li>jQuery를 사용해 기존 코드를 개선한다</li>
         <li>HTML에 붙인 스크립트 코드를 분리시켜 jQuery 문법으로 작성한다</li>
       </ul>
+      <h2>
+        jQuery와 Vanila JavaScript
+      </h2>
+      <h3>jQuery</h3>
+      <pre>
+        <code>
+          $('#home').on('click', clickHome);
+          $('#seoul').on('click', clickSeoul);
+          $('#tokyo').on('click', clickTokyo);
+          $('#paris').on('click',clickParis);
+        </code>
+      </pre>
+      <h3>Vanila JavaScript</h3>
+      <pre>
+        <code>
+          document.getElementById('home').addEventListener('click', clickHome);
+          document.getElementById('seoul').addEventListener('click', clickSeoul);
+          document.getElementById('tokyo').addEventListener('click', clickTokyo);
+          document.getElementById('paris').addEventListener('click', clickParis);
+        </code>
+      </pre>
+      <p>프론트 엔드 개발에서는 점차 jQuery를 지양해가는 추세이다. angular, react, vue 등을 사용할 때 jQuery 사용을 권장하지 않기 때문이다. jQuery를 알아두긴 하되, 의존적이지 않도록 학습해야한다.</p>
     </div>
     <img id="photo" src="images/home.png" width="90%" />
 
