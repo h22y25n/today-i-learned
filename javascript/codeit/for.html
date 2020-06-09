@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>for 반복문</title>
+</head>
+<body>
+  <h1>for 반복문</h1>
+  <p>브랜드 6개를 콘솔 로그에 찍어보자.</p>
+  
+  <script>
+    var brands = ['Apple', 'Coca-Cola', 'Starbucs', 'Amazon', 'Disney', 'BMW']
+    // console.log(brands[0]);
+    // console.log(brands[1]);
+    // console.log(brands[2]);
+    // console.log(brands[3]);
+    // console.log(brands[4]);
+    // console.log(brands[5]);
+    // 위 코드와 아래 for 문은 동일한 결과를 낸다
+
+    // ***
+    // for syntax
+    // ***
+    // for (반복문에 사용할 변수 선언; 반복 조건; 반복문이 끝나고 실행될 코드) {
+    //   반복 실행할 코드
+    // }
+    for (var i = 0; i < 6; i = i + 1){
+      console.log(brands[i])
+    }
+
+    // ***
+    // for of
+    // ***
+    var fruits = ['Apple', 'Banana', 'Kiwi'];
+
+    // for(var i = 0; i < 3; i++) {
+    //   console.log(fruits[i]);
+    // }
+
+    // 조건을 쓰는것 만으로 불편함이 있고, 배열에 인덱싱을 해서 불러오는것도 불편
+    // 위의 for of 문법을 쓸지, 일반 for 문을 쓸지는 상황에 따라 다르다
+    for (v of fruits) {
+      console.log(v);
+    }
+
+    // ***
+    // for in
+    // ***
+    for (var v in fruits) {
+      console.log(v);
+    }
+    // 위 코드의 결과. `for ... in` 문은 배열의 value가 아닌 index에 접근힌다.
+    // `for ... in` 문으로 value에 접근하기 위해서 아래와 같이 바꿔줘야한다
+    for (var v in fruits) {
+      console.log(fruits[v]);
+    }
+  </script>
+</body>
+</html>

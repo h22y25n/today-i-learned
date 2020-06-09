@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var fruits = ['Apple', 'Banana', 'Kiwi'];
+
+    // for(var i = 0; i < 3; i++) {
+    //   console.log(fruits[i]);
+    // }
+
+    // 조건을 쓰는것 만으로 불편함이 있고, 배열에 인덱싱을 해서 불러오는것도 불편
+    // 위의 for of 문법을 쓸지, 일반 for 문을 쓸지는 상황에 따라 다르다
+    for (v of fruits) {
+      console.log(v);
+    }
+  </script>
+</body>
+</html>
