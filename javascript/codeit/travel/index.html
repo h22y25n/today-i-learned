@@ -57,6 +57,23 @@
       $("#tokyo").on("click", clickTokyo);
       $("#paris").on("click", clickParis);
 
+      /* click의 경우 링크를 클릭했을 때 실행시키고 싶은 함수가 있었기 때문에 아이디를 명시했지만, 
+      키보드는 페이지 전체에서 일어나기 때문에 따로 선택자를 쓰지 않고 전체 문서를 가리키는 document를 쓴다. */
+      $(document).on('keydown',processKeyEvent);
+
+      // 키보드 이벤트 핸들링
+      function processKeyEvent(event) {
+        if (event['key'] === '1') {
+          clickHome();
+        } else if (event['key'] === '2') {
+          clickSeoul();
+        } else if (event['key'] === '3') {
+          clickTokyo();
+        } else if (event['key'] === '4') {
+          clickParis();
+        }
+      }
+
       // HTML에 붙인 스크립트 코드를 분리시켜 jQuery 문법으로 작성한다
       // onmouseenter="mouseEnterPhoto();"
       // onmouseleave="mouseLeavePhoto();"
