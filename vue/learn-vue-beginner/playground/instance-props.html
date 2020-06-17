@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>인스턴스 옵션 속성</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      // var options = {
+      //   el: "#app",
+      //   data: {
+      //     message: "hi"
+      //   }
+      // }
+      // 별도 변수로 구분하는게 아니라, 객체를 통째로 넣어준다(객체 리터럴) new Vue의 인자에 객체 코드가 들어간다
+      var vm = new Vue({
+        el: "#app",
+        data: {
+          message: "hi"
+        },
+        // 추가 속성은 콤마로 구분하여 작성한다
+        // methods: {},
+        // created: function () {}
+      });
+    </script>
+  </body>
+</html>

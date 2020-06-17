@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Methods</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- <button v-on:click="메소드 이름">click me</button> -->
+      <button v-on:click="logText">click me</button>
+      <!-- .enter, .esc 등 . 은 이벤트 modifier -->
+      <input type="text" v-on:keyup.enter="logText" />
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        // 이벤트 처리하고 화면을 조작하는 로직은 여러개가 올 수 있기 때문에 `s`가 붙는다
+        methods: {
+          logText: function () {
+            console.log("clicked");
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

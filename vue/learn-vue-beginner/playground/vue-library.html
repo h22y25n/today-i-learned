@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reactivity 코드 라이브러리화 하기</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script>
+      var div = document.querySelector("#app");
+      var viewModel = {};
+
+      // 즉시 호출 함수: 코드를 또다른 scope에 담는 용도
+      (function () {
+        function init() {
+          Object.defineProperty(viewModel, "string", {
+            // 속성에 접근했을 때 동작을 정의
+            get: function () {
+              console.log("접근");
+            },
+            // 속성에 값을 할당했을 때 동작을 정의
+            set: function (newValue) {
+              console.log("할당", newValue);
+              // div 객체에 새로운 값으로 덮어써주기 위한 코드를 render 함수에 정의
+              render(newValue);
+            }
+          });
+        }
+
+        function render(value) {
+          div.innerHTML = value;
+        }
+
+        init();
+      })();
+    </script>
+  </body>
+</html>
