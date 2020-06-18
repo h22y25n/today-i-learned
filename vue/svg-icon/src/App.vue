@@ -1,19 +1,20 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <svgIconsDemo></svgIconsDemo>
+    <span>Icon Demonstration in App.vue:</span>
+    <svgicon icon="ic_error_24px" width="18" height="18" color="#000"></svgicon>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import svgIconsDemo from "./components/svgIconsDemo.vue";
+import './compiled-icons/index.js';
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    svgIconsDemo,
+  },
+};
 </script>
 
 <style>
