@@ -21,6 +21,7 @@ export default {
     addTodo: function() {
       // console.log(this.newTodoItem);
       // 저장하는 로직 수행 후 input 박스의 내용 초기화
+      // localStorage.setItem('key', 'value');
       localStorage.setItem(this.newTodoItem, this.newTodoItem);
       // 아래의 메소드를 수행하도록 처리
       this.clearInput();
@@ -44,6 +45,7 @@ input:focus {
   background: white;
 }
 .inputBox input {
+  width: calc(100% - 4rem);
   border-style: none;
   font-size: 0.9rem;
 }

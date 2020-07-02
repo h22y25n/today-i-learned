@@ -1,11 +1,15 @@
 <template>
   <div>
     <ul>
-      <li v-for="(todoItem, index) in todoItems" v-bind:key="todoItem" class="shadow">
+      <li
+        v-for="(todoItem, index) in todoItems"
+        v-bind:key="todoItem"
+        class="shadow"
+      >
         {{ todoItem }}
-        <span v-on:click="removeTodo(todoItem, index)" class="removeBtn"
-          ><i class="fas fa-trash-alt"></i
-        ></span>
+        <span v-on:click="removeTodo(todoItem, index)" class="removeBtn">
+          <i class="fas fa-trash-alt"></i>
+        </span>
       </li>
     </ul>
   </div>
@@ -18,21 +22,25 @@ export default {
       todoItems: [],
     };
   },
-  method: {
+  methods: {
     removeTodo: function(todoItem, index) {
-      // console.log(todoItem, index);
+      // 콘솔 로그로 데이터가 잘 찍히는지 확인하기 위한 코드
+      console.log(todoItem, index);
       localStorage.removeItem(todoItem);
       this.todoItems.splice(index, 1);
-    }
+    },
   },
   created: function() {
     if (localStorage.length > 0) {
       for (var i = 0; i < localStorage.length; i++) {
-        if (localStorage.key(i) !== "loglevel:webpack-dev-server")
+        // 콘솔 로그로 데이터가 잘 찍히는지 확인하기 위한 코드
+        // console.log(localStorage.key(i));
+        if (localStorage.key(i) !== "loglevel:webpack-dev-server") {
           this.todoItems.push(localStorage.key(i));
+        }
       }
     }
-  },
+  }
 };
 </script>
 
@@ -68,7 +76,6 @@ li {
   margin-left: auto;
   color: #de4343;
 }
-
 /*리스트 아이템 트랜지션 효과*/
 .list-enter-active,
 .list-leave-active {
