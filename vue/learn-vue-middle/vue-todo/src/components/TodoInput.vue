@@ -19,12 +19,18 @@ export default {
   },
   methods: {
     addTodo: function() {
-      // console.log(this.newTodoItem);
-      // 저장하는 로직 수행 후 input 박스의 내용 초기화
-      // localStorage.setItem('key', 'value');
-      localStorage.setItem(this.newTodoItem, this.newTodoItem);
-      // 아래의 메소드를 수행하도록 처리
-      this.clearInput();
+      if (this.newTodoItem !== '') {
+        // completed 불린값과 텍스트 값 item 속성을 가지고 있는 오브젝트 생성
+        var obj = {completed: false, item: this.newTodoItem}
+        // console.log(this.newTodoItem);
+        // 저장하는 로직 수행 후 input 박스의 내용 초기화
+        // localStorage.setItem('key', 'value');
+        // 자바스크립트 객체를 string으로 변환해주도록 코드 작성
+        // localStorage.setItem(this.newTodoItem, obj);
+        localStorage.setItem(this.newTodoItem, JSON.stringify(obj));
+        // 아래의 메소드를 수행하도록 처리
+        this.clearInput();
+      }
     },
     // 저장하는 로직 분리
     clearInput: function() {
