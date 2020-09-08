@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object</title>
+  </head>
+  <body>
+    <h1>Object</h1>
+    <h2>Create</h2>
+    <script>
+      var fruits = {
+        red: "apple",
+        yellow: "banana"
+      };
+      document.write("red : " + fruits.red + "<br>");
+      document.write("yellow : " + fruits.yellow + "<br>");
+      // 객체에 값을 추가하고 싶을 때 아래와 같이 쓴다
+      fruits.green = "lime";
+      document.write("green : " + fruits.green + "<br>");
+      fruits["purple color"] = "grape";
+      document.write("purple color : " + fruits["purple color"] + "<br>");
+    </script>
+
+    <h2>Iterate</h2>
+    <script>
+      // fruits 변수가 가르키는 객체에 있는 key값을 가져오는 반복문. (배열에서는 Key가 아니라 index라는 표현을 쓴다)
+      for (var key in fruits) {
+        document.write(key + "<br>");
+      }
+      for (var key in fruits) {
+        document.write(fruits[key] + "<br>");
+      }
+      for (var key in fruits) {
+        document.write(key + " : " + fruits[key] + "<br>");
+      }
+    </script>
+
+    <h2>Property & Method</h2>
+    <script>
+      fruits.showAll = function () {
+        for (var key in this) {
+          document.write(key + " : " + this[key] + "<br>");
+        }
+      };
+      fruits.showAll();
+
+    </script>
+  </body>
+</html>

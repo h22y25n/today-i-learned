@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>로그인</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/earlyaccess/notosanskr.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="login-form">
+      <form>
+        <input
+          type="text"
+          name="email"
+          id="email-input"
+          class="text-field"
+          placeholder="아이디"
+        /><br />
+        <input
+          type="password"
+          name="password"
+          id="password-input"
+          class="text-field"
+          placeholder="비밀번호"
+        /><br />
+        <input type="submit" value="로그인" id="submit-btn" />
+      </form>
+
+      <div class="links">
+        <a href="#">비밀번호를 잊어버리셨나요?</a>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      /* 힌트 1 : 어떤 이벤트인가요?
+      oninput을 사용하면, <input> 태그에 입력된 내용이 바뀔 때마다 이벤트 핸들러가 실행됩니다.
+      힌트 2 : 입력란의 값은 어떻게 받아오나요?
+      <input type="text" id="input-tag-id">
+      위와 같은 <input> 태그에 현재 입력된 값을 받아오려면 이렇게 하면 됩니다:
+      $('#input-tag-id').val() */
+
+      function buttonValidation() {
+        var email = $('#email-input').val();
+        var password = $('#password-input').val();
+
+        if(email == null && password == null) {
+          $('#submit-btn').css('background-color','#1BBC9B');
+        } else {
+          $('#submit-btn').css('background-color','#9B9B9B');
+        }
+      }
+
+      $('#email-input').on('input',buttonValidation);
+      $('#password-input').on('input',buttonValidation);
+
+    </script>
+  </body>
+</html>

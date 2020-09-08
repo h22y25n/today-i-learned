@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 여기에 logParticipant 함수를 써주세요.
+      // 코드를 작성해주세요.
+      function logParticipant(name) {
+        console.log(name + "(이)가 대화에 참여했습니다.");
+      }
+
+      // 테스트 코드
+      logParticipant("동욱");
+      logParticipant("신의");
+      logParticipant("윤수");
+      logParticipant("지은");
+      logParticipant("동준");
+      logParticipant("영훈");
+
+      // ***
+      // 계산식
+      // ***
+      // 여기에 expressMultiplication 함수를 써주세요.
+      // 코드를 작성해주세요.
+      function expressMultiplication(x, y) {
+        console.log(String(x) + " * " + String(y) + " = " + x * y);
+      }
+      // 테스트 코드
+      expressMultiplication(3, 4);
+      expressMultiplication(3, 2);
+      expressMultiplication(7, 5);
+      expressMultiplication(8, 9);
+      expressMultiplication(5, 5);
+      expressMultiplication(9, 9);
+
+      // ***
+      // 너비계산
+      // ***
+      // calculateRectangleArea라는 이름의 함수를 만드세요.
+      // 이 함수는 가로와 세로를 입력받아서 넓이를 return 해주어야 합니다.
+      function calculateRectangleArea(width, height) {
+        return width * height;
+      }
+      // 테스트 코드
+      var area1 = calculateRectangleArea(3, 4); // 가로 3, 세로 4인 직사각형의 넓이 계산
+      var area2 = calculateRectangleArea(5, 8); // 가로 5, 세로 8인 직사각형의 넓이 계산
+      var area3 = calculateRectangleArea(7, 2); // 가로 7, 세로 2인 직사각형의 넓이 계산
+
+      console.log(
+        "Area1: " + area1 + ", Area2: " + area2 + ", Area3: " + area3
+      );
+
+      // ***
+      // 서열 정리
+      // ***
+      function whatShouldICallYou(myAge, myGender, yourAge, yourGender) {
+        // 나의 나이, 나의 성별, 상대방의 나이, 상대방의 성별
+        // 총 4개의 정보를 활용해서 호칭을 결정해보세요.
+        if (myAge == yourAge) {
+          return "친구";
+        } else if (myAge > yourAge) {
+          if (yourGender == "female") {
+            return "여동생";
+          } else if (yourGender == "male") {
+            return "남동생";
+          }
+        } else if (myAge < yourAge && myGender == "male") {
+          if (yourGender == "female") {
+            return "누나";
+          } else if (yourGender == "male") {
+            return "형";
+          }
+        } else if (myGender == "female" && myAge < yourAge) {
+          if (yourGender == "male") {
+            return "오빠";
+          } else {
+            return "언니";
+          }
+        }
+      }
+
+      // 테스트 코드
+      var result1 = whatShouldICallYou(23, "male", 25, "female");
+      var result2 = whatShouldICallYou(21, "female", 21, "female");
+      var result3 = whatShouldICallYou(25, "female", 22, "male");
+
+      console.log(result1);
+      console.log(result2);
+      console.log(result3);
+    </script>
+  </body>
+</html>

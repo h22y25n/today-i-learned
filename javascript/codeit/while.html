@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>while</h1>
+    <p>for 처럼 반복을 위한 문법</p>
+    <script>
+      var fruits = ["Apple", "Banana", "Kiwi", "Strawberry"];
+
+      // for (var i = 0; i < 4; i++) {
+      //   console.log(fruits[i]);
+      // }
+      var i = 0;
+      while (i < 6) {
+        console.log(fruits[i]);
+        i++;
+      }
+
+      // while문의 조건과 상관없이 나오고 싶다면 break문을 쓴다
+      // 로그인 성공 여부를 보관하는 변수
+      var login = false;
+
+      // 로그인에 성공할 때까지 반복
+      while (!login) {
+        // 아이디와 비밀번호를 입력 받는다
+        var id = window.prompt("아이디를 입력하세요");
+        var password = window.prompt("비밀번호를 입력하세요");
+
+        if (id === "codeit" && password === "4321") {
+          console.log("환영합니다. " + id + "님.");
+          login = true;
+        } else {
+          console.log("아이디와 비밀번호가 일치하지 않습니다.");
+        }
+      }
+    </script>
+  </body>
+</html>

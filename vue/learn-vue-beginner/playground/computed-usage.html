@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Computed Usage</title>
+</head>
+<style>
+  .blue-text {
+    color: blue;
+  }
+  .warning {
+    color: red;
+  }
+</style>
+<body>
+  <div id="app">
+    <!-- data에 정의된 cname을 클래스로 대입하는 예제 -->
+    <p v-bind:class="cname">data 속성으로 바인딩하기</p>
+    <!-- 직접 템플릿에 warning의 상태를 정의해주는 예제 -->
+    <p v-bind:class="{ warning: isError }">템플릿에 상태를 정의해주기</p>
+    <!-- computed 속성을 클래스 바인딩한 예제 -->
+    <p v-bind:class="errorTextColor">computed 속성을 바인딩하기</p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        cname: 'blue-text',
+        isError: false
+      },
+      computed: {
+        errorTextColor: function() {
+          // if (isError) {
+          //   return 'warning'
+          // } else {
+          //   return null;
+          // }
+          // 삼항연산자: 위 코드를 한줄로 표현한 것
+          return this.isError ? 'warning': null;
+        }
+      }
+    });
+  </script>
+</body>
+</html>
