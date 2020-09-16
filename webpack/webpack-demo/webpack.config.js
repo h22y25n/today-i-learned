@@ -7,9 +7,9 @@ const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 
 module.exports = {
   mode: "none",
-  entry: "./src/index.js", // 작성한 파일
+  entry: "./src/js/index.js", // 작성한 파일
   output: {
-    filename: "main.js", // 하나로 번들링할 JS파일
+    filename: "bundle.js", // 하나로 번들링된 JS파일
     path: path.resolve(__dirname, "dist"), // 빌드 결과 경로
   },
   devServer: {
@@ -44,7 +44,8 @@ module.exports = {
           {
             loader: "file-loader",
             options: {
-              name: "images/[name].[ext]?[hash]",
+              // publicPath: "./dist/", // prefix로 사용할 아웃풋 경로 지정 기능 (지금은 필요없음)
+              name: "images/[name].[ext]?[hash]", // 번들링후 파일명 유지
             },
           },
         ],
