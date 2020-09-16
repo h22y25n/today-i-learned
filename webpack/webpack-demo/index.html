@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webpack Demo</title>
+  <link rel="stylesheet" href="./dist/main.css">
+</head>
+
+<body>
+  <h1>Webpack Demo</h1>
+  <h2>하고싶은 것</h2>
+  <ul>
+    <li><input type="checkbox" checked> SCSS로 작업하기</li>
+    <li><input type="checkbox"> SVG 아이콘 사용하기</li>
+    <li><input type="checkbox"> 반복 사용하는 UI 모듈화 하기</li>
+  </ul>
+  <h2>설치한 것</h2>
+  <h3>NPM</h3>
+  <ul>
+    <li>webpack</li>
+    <li>webpack-cli</li>
+    <li><a href="https://www.npmjs.com/package/webpack-dev-server" target="_blank">webpack-dev-server</a></li>
+    <li><a href="https://www.npmjs.com/package/css-loader" target="_blank">css-loader</a></li>
+    <li><a href="https://www.npmjs.com/package/node-sass" target="_blank">node-sass</a></li>
+    <li><a href="https://www.npmjs.com/package/sass-loader" target="_blank">sass-loader</a></li>
+    <li><a href="https://www.npmjs.com/package/file-loader" target="_blank">file-loader</a></li>
+    <li><a href="https://www.npmjs.com/package/svg-sprite-loader" target="_blank">svg-sprite-loader</a></li>
+    <li><a href="https://www.npmjs.com/package/clean-webpack-plugin" target="_blank">clean-webpack-plugin</a></li>
+  </ul>
+  <h3>Plugin</h3>
+  <ul>
+    <li><a href="https://webpack.js.org/plugins/mini-css-extract-plugin/" target="_blank">MiniCssExtractPlugin</a></li>
+  </ul>
+  <h2>이미지 리소스</h2>
+  <img src="./src/images/webpack.png" alt="webpack" width="700px">
+  <svg>
+    <use xlink:href="#folder-open-regular"></use>
+  </svg>
+  <svg>
+    <use xlink:href="#copy-regular"></use>
+  </svg>
+  <svg>
+    <use xlink:href="#3"></use>
+  </svg>
+
+  <script src="dist/main.js"></script>
+
+  <h2>html-webpack-loader 테스트</h2>
+  <div class="container">
+    what?
+  </div>
+</body>
+
+</html>
