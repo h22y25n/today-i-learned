@@ -2,7 +2,7 @@ $heading-text: #272727;
 $sub-heading-text: #3c3c3c;
 
 body {
-  background-color: #fff;
+  background-color: #eee;
   // background-color: lightgoldenrodyellow;
 }
 
@@ -120,4 +120,11 @@ $color-scheme: (
 
 @each $name, $ui-1, $ui-2, $interactive-1, $interactive-2, $icon-1 in $color-scheme {
   @include theme($name, $ui-1, $ui-2, $interactive-1, $interactive-2, $icon-1);
+}
+
+// svg-icon
+.svg-icon {
+  width: 200px;
+  height: 200px;
+  color: #89b0d6;  //Reference: https://css-tricks.com/cascading-svg-fill-color/
 }
