@@ -19,10 +19,12 @@ module.exports = {
     port: 9000,
   },
   plugins: [
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: `[name].min.css`
+    }),
     new HtmlWebpackPlugin({
       // index.html 템플릿을 기반으로 빌드 결과물을 추가해줌
-      template: "index.html",
+      template: "index.html", // 템플릿 경로를 지정 
     }),
     new CleanWebpackPlugin(),
     new SpriteLoaderPlugin(),
