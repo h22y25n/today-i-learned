@@ -1,0 +1,14 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "./custom-style.scss";
+
+.spare-button {
+  @apply bg-purple-600 rounded-full px-8 py-2 shadow-lg text-purple-100;
+}
+
+.svg-icon {
+  width: 200px;
+  height: 200px;
+  color: #89b0d6;
+}
