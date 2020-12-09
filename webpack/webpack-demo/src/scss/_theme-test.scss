@@ -28,51 +28,59 @@
   background-color: lighten(#005ACD, 20%);
 }
 
-:root {
-  --theme-count:6;
-  --first-hue: 180;
-  --hue-step: calc(360 / var(--theme-count));
-  // shade의 갯수, lightness의 단계
-  --shade-count: 6;
-  --lgt-step: 5%;
-  // lightness 정의
-  --lgt-1: var(--lgt-step);
-  --lgt-2: calc(var(--lgt-1) + var(--lgt-step));
-  --lgt-3: calc(var(--lgt-2) + var(--lgt-step));
-  --lgt-4: calc(var(--lgt-3) + var(--lgt-step));
-  --lgt-5: calc(var(--lgt-4) + var(--lgt-step));
-  --lgt-6: calc(var(--lgt-5) + var(--lgt-step));
-}
+// 기본 항목들
+$theme-count:6 !default;
+$first-hue: 180 !default;
+$hue-step: calc(360 / #{$theme-count}) !default;
+// shade의 갯수, lightness의 단계
+$shade-count: 6 !default;
+$lgt-step: 5% !default;
+// lightness 정의
+$lgt-1: $lgt-step;
+$lgt-2: calc(#{$lgt-1} + #{$lgt-step}) !default;
+$lgt-3: calc(#{$lgt-2} + #{$lgt-step}) !default;
+$lgt-4: calc(#{$lgt-3} + #{$lgt-step}) !default;
+$lgt-5: calc(#{$lgt-4} + #{$lgt-step}) !default;
+$lgt-6: calc(#{$lgt-5} + #{$lgt-step}) !default;
 
+// hue 정의
+$second-hue: calc(#{$first-hue} + #{$hue-step});
+$thired-hue: calc(#{$second-hue} + #{$hue-step});
+
+@mixin chips($hue) {
+  .chip-1 {
+    background-color: hsl($hue, 100%, $lgt-1);
+  }
+
+  .chip-2 {
+    background-color: hsl($hue, 100%, $lgt-2);
+  }
+
+  .chip-3 {
+    background-color: hsl($hue, 100%, $lgt-3);
+  }
+
+  .chip-4 {
+    background-color: hsl($hue, 100%, $lgt-4);
+  }
+
+  .chip-5 {
+    background-color: hsl($hue, 100%, $lgt-5);
+  }
+
+  .chip-6 {
+    background-color: hsl($hue, 100%, $lgt-6);
+  }
+}
 .theme-teal {
-  --hue: var(--first-hue);
+  @include chips($first-hue);
 }
 
 // hue-step 만큼 hue의 deg 가 변경되도록 계산
 .theme-blue {
-  --hue: calc(var(--first-hue) + calc(var(--hue-step)));
+  @include chips($second-hue);
 }
 
-.chip-1 {
-  background-color: hsl(var(--hue), 100%, var(--lgt-1));
-}
-
-.chip-2 {
-  background-color: hsl(var(--hue), 100%, var(--lgt-2));
-}
-
-.chip-3 {
-  background-color: hsl(var(--hue), 100%, var(--lgt-3));
-}
-
-.chip-4 {
-  background-color: hsl(var(--hue), 100%, var(--lgt-4));
-}
-
-.chip-5 {
-  background-color: hsl(var(--hue), 100%, var(--lgt-5));
-}
-
-.chip-6 {
-  background-color: hsl(var(--hue), 100%, var(--lgt-6));
+.theme-magenta {
+  @include chips($thired-hue);
 }
