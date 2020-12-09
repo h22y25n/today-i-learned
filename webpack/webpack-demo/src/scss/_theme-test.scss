@@ -1,0 +1,78 @@
+
+.color-chip-wrap {
+  display: flex;
+}
+
+.color-chip {
+  width: 40px;
+  height: 40px;
+}
+
+.color-origin {
+  background-color: #005ACD;
+}
+
+.color-origin--darken10 {
+  background-color: darken(#005ACD, 10%);
+}
+
+.color-origin--darken20 {
+  background-color: darken(#005ACD, 20%);
+}
+
+.color-origin--lighten10 {
+  background-color: lighten(#005ACD, 10%);
+}
+
+.color-origin--lighten20 {
+  background-color: lighten(#005ACD, 20%);
+}
+
+:root {
+  --theme-count:6;
+  --first-hue: 180;
+  --hue-step: calc(360 / var(--theme-count));
+  // shade의 갯수, lightness의 단계
+  --shade-count: 6;
+  --lgt-step: 5%;
+  // lightness 정의
+  --lgt-1: var(--lgt-step);
+  --lgt-2: calc(var(--lgt-1) + var(--lgt-step));
+  --lgt-3: calc(var(--lgt-2) + var(--lgt-step));
+  --lgt-4: calc(var(--lgt-3) + var(--lgt-step));
+  --lgt-5: calc(var(--lgt-4) + var(--lgt-step));
+  --lgt-6: calc(var(--lgt-5) + var(--lgt-step));
+}
+
+.theme-teal {
+  --hue: var(--first-hue);
+}
+
+// hue-step 만큼 hue의 deg 가 변경되도록 계산
+.theme-blue {
+  --hue: calc(var(--first-hue) + calc(var(--hue-step)));
+}
+
+.chip-1 {
+  background-color: hsl(var(--hue), 100%, var(--lgt-1));
+}
+
+.chip-2 {
+  background-color: hsl(var(--hue), 100%, var(--lgt-2));
+}
+
+.chip-3 {
+  background-color: hsl(var(--hue), 100%, var(--lgt-3));
+}
+
+.chip-4 {
+  background-color: hsl(var(--hue), 100%, var(--lgt-4));
+}
+
+.chip-5 {
+  background-color: hsl(var(--hue), 100%, var(--lgt-5));
+}
+
+.chip-6 {
+  background-color: hsl(var(--hue), 100%, var(--lgt-6));
+}

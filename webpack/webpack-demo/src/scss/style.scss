@@ -1,3 +1,5 @@
+@import "theme-test";
+
 $heading-text: #272727;
 $sub-heading-text: #3c3c3c;
 
@@ -127,33 +129,4 @@ $color-scheme: (
   width: 200px;
   height: 200px;
   color: #89b0d6;  //Reference: https://css-tricks.com/cascading-svg-fill-color/
-}
-
-.color-chip-wrap {
-  display: flex;
-}
-
-.color-chip {
-  width: 40px;
-  height: 40px;
-}
-
-.color-origin {
-  background-color: #005ACD;
-}
-
-.color-origin--darken10 {
-  background-color: darken(#005ACD, 10%);
-}
-
-.color-origin--darken20 {
-  background-color: darken(#005ACD, 20%);
-}
-
-.color-origin--lighten10 {
-  background-color: lighten(#005ACD, 10%);
-}
-
-.color-origin--lighten20 {
-  background-color: lighten(#005ACD, 20%);
 }
